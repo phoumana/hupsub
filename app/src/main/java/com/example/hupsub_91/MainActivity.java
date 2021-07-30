@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.icu.text.CaseMap;
 import android.os.Bundle;
 import android.view.Menu;
@@ -24,6 +25,7 @@ import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -131,9 +133,6 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(5).setIcon(R.drawable.ic_fdirections_car_green);
         tabLayout.getTabAt(6).setIcon(R.drawable.ic_iperson_green);
 
-        BadgeDrawable badgeDrawable = tabLayout.getTabAt(0).getOrCreateBadge();
-        badgeDrawable.setVisible(true);
-        badgeDrawable.setNumber(19);
 
     }
 //add page function^^
@@ -208,13 +207,17 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_search){
-            Toast.makeText(getApplicationContext(), "notic click", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Notic click", Toast.LENGTH_LONG).show();
         }else if (id == R.id.action_search){
-            Toast.makeText(getApplicationContext(),"Iconned click", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Search click", Toast.LENGTH_LONG).show();
         }else if (id == R.id.action_sms){
             Toast.makeText(getApplicationContext(),"Sms clicked", Toast.LENGTH_LONG).show();
         }else if (id == R.id.action_sort){
             Toast.makeText(getApplicationContext(), "Sort click", Toast.LENGTH_LONG).show();
+        }else if (id == R.id.logout){
+            FirebaseAuth.getInstance().signOut();
+            Toast.makeText(MainActivity.this,"Logout clicked", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
         }
         return true;
     }

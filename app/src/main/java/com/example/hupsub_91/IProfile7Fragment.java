@@ -11,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 /**
@@ -28,10 +29,13 @@ public class IProfile7Fragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    
 
     public IProfile7Fragment() {
         // Required empty public constructor
+
     }
+
 
     /**
      * Use this factory method to create a new instance of
@@ -49,6 +53,7 @@ public class IProfile7Fragment extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+
     }
 
     @Override
