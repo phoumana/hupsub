@@ -3,15 +3,16 @@ package com.example.hupsub_91;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -27,6 +28,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+
 public class LoginActivity extends AppCompatActivity {
 
     private static final int RC_SIGN_IN = 101;
@@ -35,13 +37,12 @@ public class LoginActivity extends AppCompatActivity {
     private EditText password;
     private Button login;
     private Button btnGoogle;
-    private Button btnFacebook;
     GoogleSignInClient mGoogleSignInClient;
-    ProgressDialog progressDialog;
-
 
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
+
+
 
 
     @Override
@@ -49,13 +50,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-//Google login>>
-
-//Google login<<<
-
-//Facebook logIn>>>
-
-///facebook logIn<<<
 
         register = findViewById(R.id.registerBtn);
         login = findViewById(R.id.login);
@@ -64,14 +58,11 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         btnGoogle=findViewById(R.id.btnGoogle);
 
-        //Google LogIn>>
-        // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
-        // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         btnGoogle.setOnClickListener(new View.OnClickListener() {
@@ -81,9 +72,7 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-        //Google LogIn<<!!!>>
 
-//Login by email and passowrd>>
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,6 +90,7 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
+
     }
 
     private void loginUser(String email, String password) {
@@ -112,6 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
+
 //Login by eamil and password>>
 
     }
@@ -141,6 +132,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
         mAuth.signInWithCredential(credential)
@@ -162,11 +154,12 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
-//Google Login Go to activity
-    private void updateUI(FirebaseUser user) {
+
+    public void updateUI(FirebaseUser user) {
         Intent intent=new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
     }
+
 
 
 }

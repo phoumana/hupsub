@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "631087788355",
+    "firebase_url": "https://hubsub-app-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "hubsub-app",
+    "storage_bucket": "hubsub-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631087788355:android:6ff269be582e1318b6fff6",
+        "android_client_info": {
+          "package_name": "com.example.hupsub_91"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631087788355-st7fo9k87q64qei2o07cjlb8gqmhs7ct.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hupsub_91",
+            "certificate_hash": "3c5f53797ed0625f629081818cb19514b596b915"
+          }
+        },
+        {
+          "client_id": "631087788355-23qck8oimkjju25iihk4h3asb7gd1dir.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAmMeMcuBldEunhAySfKdGsD6kR3HztDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631087788355-23qck8oimkjju25iihk4h3asb7gd1dir.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
